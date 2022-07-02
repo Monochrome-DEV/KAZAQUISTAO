@@ -156,6 +156,7 @@ class WeekData {
 					}
 				}
 			}
+		}
 
 	public static function reloadExtraFiles(isStoryMode:Null<Bool> = false)
 		{

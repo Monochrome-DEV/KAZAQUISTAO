@@ -44,9 +44,9 @@ class MainMenuState extends MusicBeatState
 	var options:FlxSprite;
 	
 	var optionStuff:Array<String> = [
-//		'story_mode',
+		'story_mode',
 		'freeplay',
-//		#if MODS_ALLOWED 'mods', #end
+		#if MODS_ALLOWED 'mods', #end
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		#if !switch 'donate', #end
@@ -111,7 +111,7 @@ class MainMenuState extends MusicBeatState
 			scale = 6 / optionStuff.length;
 		}*/
 
-/*		storyMode = new FlxSprite(10, -280);
+		storyMode = new FlxSprite(10, -280);
 		storyMode.frames = Paths.getSparrowAtlas("mainmenu/menu_story_mode");
 		storyMode.animation.addByPrefix("idle", "story_mode basic", 24, true);
 		storyMode.animation.addByPrefix("selected", "story_mode white", 24, true);
@@ -119,8 +119,8 @@ class MainMenuState extends MusicBeatState
 		storyMode.scrollFactor.set(0, 1);
 		storyMode.antialiasing = ClientPrefs.globalAntialiasing;
 		add(storyMode);
-*/
-		freeplay = new FlxSprite(10, -280);
+
+		freeplay = new FlxSprite(10, -140);
 		freeplay.frames = Paths.getSparrowAtlas("mainmenu/menu_freeplay");
 		freeplay.animation.addByPrefix("idle", "freeplay basic", 24, true);
 		freeplay.animation.addByPrefix("selected", "freeplay white", 24, true);
@@ -129,7 +129,7 @@ class MainMenuState extends MusicBeatState
 		freeplay.antialiasing = ClientPrefs.globalAntialiasing;
 		add(freeplay);
 
-/*		mods = new FlxSprite(10, -140);
+		mods = new FlxSprite(10, 0);
 		mods.frames = Paths.getSparrowAtlas("mainmenu/menu_mods");
 		mods.animation.addByPrefix("idle", "mods basic", 24, true);
 		mods.animation.addByPrefix("selected", "mods white", 24, true);
@@ -137,8 +137,8 @@ class MainMenuState extends MusicBeatState
 		mods.scrollFactor.set(0, 1);
 		mods.antialiasing = ClientPrefs.globalAntialiasing;
 		add(mods);
-*/
-		awards = new FlxSprite(10, -140);
+
+		awards = new FlxSprite(10, 140);
 		awards.frames = Paths.getSparrowAtlas("mainmenu/menu_awards");
 		awards.animation.addByPrefix("idle", "awards basic", 24, true);
 		awards.animation.addByPrefix("selected", "awards white", 24, true);
@@ -147,7 +147,7 @@ class MainMenuState extends MusicBeatState
 		awards.antialiasing = ClientPrefs.globalAntialiasing;
 		add(awards);
 
-		credits = new FlxSprite(10, 0);
+		credits = new FlxSprite(10, 280);
 		credits.frames = Paths.getSparrowAtlas("mainmenu/menu_credits");
 		credits.animation.addByPrefix("idle", "credits basic", 24, true);
 		credits.animation.addByPrefix("selected", "credits white", 24, true);
@@ -156,7 +156,7 @@ class MainMenuState extends MusicBeatState
 		credits.antialiasing = ClientPrefs.globalAntialiasing;
 		add(credits);
 
-		donate = new FlxSprite(10, 140);
+		donate = new FlxSprite(10, 420);
 		donate.frames = Paths.getSparrowAtlas("mainmenu/menu_donate");
 		donate.animation.addByPrefix("idle", "donate basic", 24, true);
 		donate.animation.addByPrefix("selected", "donate white", 24, true);
@@ -165,7 +165,7 @@ class MainMenuState extends MusicBeatState
 		donate.antialiasing = ClientPrefs.globalAntialiasing;
 		add(donate);
 
-		options = new FlxSprite(10, 280);
+		options = new FlxSprite(10, 560);
 		options.frames = Paths.getSparrowAtlas("mainmenu/menu_options");
 		options.animation.addByPrefix("idle", "options basic", 24, true);
 		options.animation.addByPrefix("selected", "options white", 24, true);
@@ -241,22 +241,22 @@ class MainMenuState extends MusicBeatState
 	{
 		switch (curSelected)
 		{
-//			case 1:
-//				MusicBeatState.switchState(new StoryMenuState());
-
 			case 1:
-				MusicBeatState.switchState(new PlayGameMenuState());
-					
-//			case 2:
-//				MusicBeatState.switchState(new ModsMenuState());
-				
+				MusicBeatState.switchState(new StoryMenuState());
+
 			case 2:
+				MusicBeatState.switchState(new FreeplayState());
+					
+			case 3:
+				MusicBeatState.switchState(new ModsMenuState());
+				
+			case 4:
 				MusicBeatState.switchState(new AchievementsMenuState());
 				
-			case 3:
+			case 5:
 				MusicBeatState.switchState(new CreditsState());
 				
-			case 5:
+			case 7:
 				LoadingState.loadAndSwitchState(new options.OptionsState());
 				
 		}
