@@ -120,7 +120,7 @@ class MainMenuState extends MusicBeatState
 		storyMode.antialiasing = ClientPrefs.globalAntialiasing;
 		add(storyMode);
 */
-		freeplay = new FlxSprite(10, -140);
+		freeplay = new FlxSprite(10, -280);
 		freeplay.frames = Paths.getSparrowAtlas("mainmenu/menu_freeplay");
 		freeplay.animation.addByPrefix("idle", "freeplay basic", 24, true);
 		freeplay.animation.addByPrefix("selected", "freeplay white", 24, true);
@@ -138,7 +138,7 @@ class MainMenuState extends MusicBeatState
 		mods.antialiasing = ClientPrefs.globalAntialiasing;
 		add(mods);
 */
-		awards = new FlxSprite(10, 140);
+		awards = new FlxSprite(10, -140);
 		awards.frames = Paths.getSparrowAtlas("mainmenu/menu_awards");
 		awards.animation.addByPrefix("idle", "awards basic", 24, true);
 		awards.animation.addByPrefix("selected", "awards white", 24, true);
@@ -147,7 +147,7 @@ class MainMenuState extends MusicBeatState
 		awards.antialiasing = ClientPrefs.globalAntialiasing;
 		add(awards);
 
-		credits = new FlxSprite(10, 280);
+		credits = new FlxSprite(10, 0);
 		credits.frames = Paths.getSparrowAtlas("mainmenu/menu_credits");
 		credits.animation.addByPrefix("idle", "credits basic", 24, true);
 		credits.animation.addByPrefix("selected", "credits white", 24, true);
@@ -156,7 +156,7 @@ class MainMenuState extends MusicBeatState
 		credits.antialiasing = ClientPrefs.globalAntialiasing;
 		add(credits);
 
-		donate = new FlxSprite(10, 420);
+		donate = new FlxSprite(10, 140);
 		donate.frames = Paths.getSparrowAtlas("mainmenu/menu_donate");
 		donate.animation.addByPrefix("idle", "donate basic", 24, true);
 		donate.animation.addByPrefix("selected", "donate white", 24, true);
@@ -165,7 +165,7 @@ class MainMenuState extends MusicBeatState
 		donate.antialiasing = ClientPrefs.globalAntialiasing;
 		add(donate);
 
-		options = new FlxSprite(10, 560);
+		options = new FlxSprite(10, 280);
 		options.frames = Paths.getSparrowAtlas("mainmenu/menu_options");
 		options.animation.addByPrefix("idle", "options basic", 24, true);
 		options.animation.addByPrefix("selected", "options white", 24, true);
@@ -245,7 +245,7 @@ class MainMenuState extends MusicBeatState
 //				MusicBeatState.switchState(new StoryMenuState());
 
 			case 1:
-				MusicBeatState.switchState(new FreeplayState());
+				MusicBeatState.switchState(new PlayGameMenuState());
 					
 //			case 3:
 //				MusicBeatState.switchState(new ModsMenuState());
@@ -403,9 +403,9 @@ class MainMenuState extends MusicBeatState
 							camFollow.setPosition(400, 240);
 
 						case 5:
-							FlxTween.tween(storyMode, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
+//							FlxTween.tween(storyMode, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(freeplay, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
-							FlxTween.tween(mods, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
+//							FlxTween.tween(mods, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(awards, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(credits, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(donate, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});

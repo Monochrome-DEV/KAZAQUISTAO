@@ -27,9 +27,9 @@ using StringTools;
 
 class PlayGameMenuState extends MusicBeatState
 {
-//	public static var psychEngineVersion:String = '0.5.2h'; //This is also used for Discord RPC
-//	public static var monoEngineVersion:String = '0.0.1'; //This is also used for Discord RPC
-//	public static var curSelected:Int = 1;
+	public static var psychEngineVersion:String = '0.5.2h'; //This is also used for Discord RPC
+	public static var monoEngineVersion:String = '0.0.1'; //This is also used for Discord RPC
+	public static var curSelected:Int = 1;
 
 	//var menuItems:FlxTypedGroup<FlxSprite>;
 	private var camGame:FlxCamera;
@@ -270,7 +270,7 @@ class PlayGameMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new TitleState());
+				MusicBeatState.switchState(new MainMenuState());
 			}
 
 			if (controls.ACCEPT)
@@ -291,7 +291,7 @@ class PlayGameMenuState extends MusicBeatState
 						case 2:
 							FlxTween.tween(freeplay, {alpha: 0, y: freeplay.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(extra, {x: extra.x + 440}, 0.5, {ease: FlxEase.circOut, onComplete: secondTween});
-							FlxTween.tween(awards, {alpha: 0, y: joke.y + 10}, 0.33, {ease: FlxEase.circOut});
+							FlxTween.tween(joke, {alpha: 0, y: joke.y + 10}, 0.33, {ease: FlxEase.circOut});
 							camFollow.setPosition(400, 130);
 
 						case 3:
