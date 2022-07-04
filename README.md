@@ -1,9 +1,9 @@
-# Friday Night Funkin' - Psych Engine (but the funny)
-every single piece of new code that relates to shaders is stolen from strident engine because i had no idea what i was doing
+# KAZAQUISTAO EDITION
 
-also flxtweens are good
+RAPEIE CONTRA OS DEUSES DO UNIVERSO
+OS CIRADORES DE KAZAQUIS FUNKEI NAITI
 
-btw this was the build used in manny edition v3
+feito com manny engine 0.5.2h
 
 ## Installation:
 You must have [the most up-to-date version of Haxe](https://haxe.org/download/), seriously, stop using 4.1.5, it misses some stuff.
